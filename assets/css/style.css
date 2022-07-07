@@ -1,0 +1,132 @@
+@font-face {
+    font-family: "Gotham";
+    src: url("../fonts/Gotham-font/GothamMedium.ttf");
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+#acceuil {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/Wall-Popcorn.png");
+    background-size: cover;
+    font-family: "Gotham";
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+
+    color: white;
+
+}
+
+.logo {
+    width: 400px;
+    height: 300px;
+    background-image: url("../img/logo-sans-fond.png");
+    background-size: cover;
+}
+
+.nombre {
+    color: #0AEFF7;
+    font-size: 80px;
+}
+
+p {
+    padding: 5px;
+    margin: 0;
+}
+
+.commencer {
+    padding: 20px;
+    font-size: 20px;
+    background: none;
+    cursor: pointer;
+    border: none;
+    color: #FFAAFF;
+}
+
+.commencer:hover {
+    color: #0AEFF7;
+}
+
+a {
+    color: white;
+    padding: 20px;
+}
+
+a:hover {
+    color: #0AEFF7;
+}
+
+.basdepage {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+}
+/* 
+#jeu {
+
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/jeu.png");
+    background-size: cover;
+
+}
+
+.titrescore {
+    text-decoration: underline;
+    color: #0AEFF7;
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 20px;
+    left: 0;
+}
+
+.pts {
+    color: white;
+    position: fixed;
+    top: 10px;
+    left: 35px;
+}
+
+.croix {
+
+    color: #6D686D;
+    position: fixed;
+    top: 35px;
+
+}
+
+.x1 {
+    left: 40px;
+    color: aqua;
+}
+.x2 {
+    left: 55px;
+    
+}
+.x3 {
+    left: 70px;
+    
+}
+
+.logo-jeu {
+    width: 150px;
+    height: 150px;
+    background-image: url("../img/logo-sans-fond2.png");
+    background-size: cover;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+
+} */
