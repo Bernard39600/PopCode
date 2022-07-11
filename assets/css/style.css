@@ -183,6 +183,7 @@ body {
     }
 }
 
+
 #accueil {
 
     width: 100%;
@@ -245,3 +246,128 @@ a:hover {
     bottom: 20px;
     right: 10px;
 }
+
+#jeu {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/chambre.jpg");
+    background-size: cover;
+    font-family: "Gotham";
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+
+}
+
+.titrescore {
+    text-decoration: underline;
+    color: #0AEFF7;
+    transform: rotate(-90deg);
+    position: fixed;
+    top: 20px;
+    left: 0;
+}
+
+.pts {
+    color: white;
+    position: fixed;
+    top: 10px;
+    left: 40px;
+}
+
+.croix {
+    color: #6D686D;
+    position: fixed;
+    top: 45px;
+}
+
+.x1 {
+    left: 40px;
+    color: aqua;
+}
+
+.x2 {
+    left: 58px;
+}
+
+.x3 {
+    left: 76px;
+}
+
+.logo-jeu {
+    width: 150px;
+    height: 150px;
+    background-image: url("../img/logo-sans-fond2.png");
+    background-size: cover;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+}
+.titre-zoom {
+    color: #0AEFF7;
+    transform: rotate(-90deg);
+    position: fixed;
+    bottom: 200px;
+    left: 15px;
+}
+
+
+.barre-zoom {   
+    position: fixed;
+    left: 30px;
+    bottom: 37px;
+    width: 0px;
+    height: 124px;
+    border: 1px solid #d9d9d9;
+    
+}
+
+.plus{
+    position: fixed;
+    left: 8px;
+    bottom: 150px;
+    text-decoration: none;
+}
+
+.moins{
+    position: fixed;
+    left: 9px;
+    bottom: 0px;
+    text-decoration: none;
+}
+
+.trouve {
+
+    display: flex;
+    position: fixed;
+    left: 70px;
+    bottom: 20px;
+    width: 145px;
+    height: 24px;
+    text-align: right;
+    align-items: center;
+    justify-content: end;
+    border: 1px solid white;
+    padding: 5px;
+}
+
+.loupe{
+    width: 14px;
+    height: 14px;
+    background-image: url("../img/search.png");
+    background-size: cover;
+    position: fixed;
+    bottom: 30px;
+    left: 80px;
+}
+
+/* @media screen and (max-width:1000px) {
+    #jeu{
+
+        background-image: url("../img/Wall-Popcorn.png");
+    }   
+} */

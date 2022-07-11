@@ -14,6 +14,13 @@
 </head>
 
 <body>
+
+    <div class="basdepage">
+        <a href="mentions"> Mentions legales </a>
+        <!-- https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires -->
+        <a href="confidentialite"> Politique de confidentialité </a>
+    </div>
+
     <section id="loader">
         <p class="neon">Pop Code</p>
         <div class="wrapper">
@@ -33,16 +40,11 @@
         <p>REFERENCES DE</p>
         <p>LANGAGES DE PROGRAMMATION</p>
         <p>A RETROUVER</p>
-        <button href="#jeu" class="commencer">Cliquer pour commencer</button>
+        <button id="jouer" class="commencer">Cliquer pour commencer</button>
 
-        <div class="basdepage">
-            <a href="mentions"> Mentions legales </a>
-            <!-- https://www.economie.gouv.fr/entreprises/site-internet-mentions-obligatoires -->
-            <a href="confidentialite"> Politique de confidentialité </a>
-        </div>
     </section>
 
-    <!-- <section id="jeu">
+    <section id="jeu" class="displayNone">
         <div class="score">
 
             <p class="titrescore">score</p>
@@ -52,7 +54,19 @@
             <span class="croix x3">X</span>
         </div>
         <div class="logo-jeu"></div>
-    </section> -->
+
+        <div class="barre-zoom">
+            <p class="titre-zoom">zoom</p>
+            <a class="plus" href="plus">+</a>
+            <a class="moins" href="moins">-</a>
+        </div>
+
+        <div class="trouve">
+            
+            <div class="loupe"></div>
+            <p>Languages trouvés</p>
+        </div>
+    </section>
 
     <script src="assets\js\app.js"></script>
 </body>
