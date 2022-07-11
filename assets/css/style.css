@@ -130,3 +130,7 @@ a:hover {
     right: 15px;
 
 } */
+
+.displayNone{
+    display: none !important; 
+}
