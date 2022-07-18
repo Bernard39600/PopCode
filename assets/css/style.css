@@ -250,8 +250,8 @@ a:hover {
 #jeu {
     width: 100%;
     height: 100vh;
-    background-image: url("../img/chambre.jpg");
-    background-size: cover;
+    /* background-image: url("../img/chambre.jpg"); */
+    /* background-size: cover; */
     font-family: "Gotham";
     font-size: 10px;
     display: flex;

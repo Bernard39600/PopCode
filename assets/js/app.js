@@ -1,4 +1,5 @@
 // function upc() {
+//     resolution< ? then =>
 //     alert("Uniquement sur PC");
 // }
 
@@ -15,5 +16,7 @@ document.getElementById('jouer').addEventListener('click', function(){
     console.log("nouvelle partie");
     document.getElementById('accueil').classList.add("displayNone")
     document.getElementById('jeu').classList.remove("displayNone")
+    // activer zoom
+    wheelzoom(document.querySelector('img.zoom'));
 })
  
