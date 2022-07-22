@@ -21,7 +21,7 @@ document.getElementById('jouer').addEventListener('click', function(){
 })
 
 var mot = ""
-let keyb = 0
+var keyb = 0
 var tableau = ["HTML", "Javascript", "CSS", "Python", "Java", "Bash",
     "PowerShell", "C#", "PHP", "C++", "TypeScript", "C", "Objective-C", "Ruby", "Go",
     "Assembly", "Swift", "Kotlin", "R", "VBA", "Scala", "Rust",
@@ -117,11 +117,13 @@ window.addEventListener("keydown", function (e) {
                 score += 1
                 console.log("Score " + score);
                 tableauVerif.push(mot)
-                console.log(" tableau index: " + i + " mot: " + mot);
+
                 // utilisation api & appel Fetch
                 let div = document.querySelector(".logo-titre");
                 let div2 = document.querySelector(".Descriptif");
 
+                console.log(" tableau index: " + i + " mot: " + mot);
+                
                 fetch("./assets/js/languages.json")
                     .then((reponse) => reponse.json())
                     .then((data) => {
@@ -130,10 +132,10 @@ window.addEventListener("keydown", function (e) {
                         div2.innerHTML = `<p>${data[i].description}</p>`
                     });
 
-                document.getElementById("modal").classList.toggle('none');
+                document.getElementById("modal").classList.toggle('displayNone');
 
                 this.modal.addEventListener("click", () => {
-                    document.getElementById("modal").classList.add('none');
+                    document.getElementById("modal").classList.add('displayNone');
                 });
                 break
             }
