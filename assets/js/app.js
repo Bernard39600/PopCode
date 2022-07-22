@@ -68,6 +68,7 @@ window.addEventListener("keydown", function (e) {
         case 'NumLock':
         case 'Control':
         case 'Alt':
+        case 'CapsLock':
             console.log("Sans effets");
             keyb = ""
             break
@@ -116,6 +117,9 @@ window.addEventListener("keydown", function (e) {
                 document.getElementById('entree2').textContent = "";
                 score += 1
                 console.log("Score " + score);
+                /*pts*/
+                document.querySelector(".pts").textContent=score+"/27";
+
                 tableauVerif.push(mot)
 
                 // utilisation api & appel Fetch
@@ -148,8 +152,20 @@ window.addEventListener("keydown", function (e) {
 
                 erreur += 1
                 console.log("Erreur: " + erreur);
+
+                /* croix */
+                if (erreur===1) {
+                    document.querySelector(".x1").style.color="#0AEFF7";      
+                }
+                if (erreur===2) {
+                    document.querySelector(".x2").style.color="#0AEFF7";                   
+                }
                 if (erreur > 2) {
-                    document.getElementById('entree').textContent = "Perdu!";
+                    document.querySelector(".x3").style.color="#0AEFF7";
+                    document.querySelector('.entree').textContent = "GAME OVER";
+                    setTimeout(function () {
+                        document.getElementById('entree').textContent = "";
+                    }, 1000);
                 }
             }, 1000);
         }

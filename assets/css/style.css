@@ -293,7 +293,6 @@ a:hover {
 
 .x1 {
     left: 40px;
-    color: #0AEFF7;
 }
 
 .x2 {
@@ -303,6 +302,10 @@ a:hover {
 .x3 {
     left: 76px;
 }
+.croixBleue {
+    color: #0AEFF7; 
+}
+
 
 .logo-jeu {
     width: 150px;
@@ -427,8 +430,8 @@ a:hover {
 
 #modal h2 {
     color: black;
-    font-size: 30px;
-
+    font-size: 50px;
+    background:   rgba(100, 100, 100, .7);
 }
 
 #modal img {
@@ -438,7 +441,7 @@ a:hover {
 }
 
 #modal p {
-    color: blue;
+    color: black;
     text-align: left;
     display: flex;
     align-items: center;
