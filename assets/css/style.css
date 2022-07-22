@@ -242,6 +242,7 @@ a {
 
 a:hover {
     color: #0AEFF7;
+    cursor: pointer;
 }
 
 .basdepage {
@@ -302,8 +303,9 @@ a:hover {
 .x3 {
     left: 76px;
 }
+
 .croixBleue {
-    color: #0AEFF7; 
+    color: #0AEFF7;
 }
 
 
@@ -381,25 +383,21 @@ a:hover {
     font-size: 32px;
 }
 
-.displayNone {
-    display: none;
-}
-
-#modal {
-    position: fixed;
+#modalMentions {
+    /* position: fixed; */
     top: 20px;
-    visibility: initial;
+    /* visibility: initial; */
     opacity: 1;
 
-    top: 0;
+    /* top: 0;
     right: 0;
     bottom: 0;
-    left: 0;
+    left: 0; */
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     background: rgba(100, 100, 100, .7);
-
 }
 
 .modal:target {
@@ -431,7 +429,7 @@ a:hover {
 #modal h2 {
     color: black;
     font-size: 50px;
-    background:   rgba(100, 100, 100, .7);
+    background: rgba(100, 100, 100, .7);
 }
 
 #modal img {
@@ -462,23 +460,45 @@ a:hover {
     color: #0AEFF7;
 }
 
-/* transition fermeture modal */
-
-/* .modal-btn:checked~.modal .modal-wrap { */
-/* .ModalClose:checked {
-      transform: scale(0.5);     
-      transition: transform 500ms ease;
-  } */
+.displayNone {
+    display: none;
+}
 
 .none {
     visibility: initial !important;
     opacity: 0 !important;
 }
 
+#mentions {
+    position: fixed;
+    top: 20px;
+    visibility: initial;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(100, 100, 100, .7);
+    /* contenu */
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 20px;
+    border-radius: 20px;
+    position: relative;
+    width: 800px;
+    max-width: 90%;
+    background: white;
+    overflow: hidden;
+    padding: 20px 30px 0 30px;
 
-@media screen and (max-width:1000px) {
+}
+
+
+@media screen and (max-width:1200px) {
     #jeu {
-
         background-image: url("../img/Wall-Popcorn.png");
     }
 }

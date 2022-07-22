@@ -138,6 +138,7 @@ window.addEventListener("keydown", function (e) {
 
                 document.getElementById("modal").classList.toggle('displayNone');
 
+                // ajouter 'entree' pour quitter modale (avec else?)
                 this.modal.addEventListener("click", () => {
                     document.getElementById("modal").classList.add('displayNone');
                 });
@@ -177,4 +178,10 @@ window.addEventListener("keydown", function (e) {
         document.getElementById('entree').textContent = mot;
         longueurMot = mot.length;
     }
+});
+// mentions
+
+document.querySelector("#affMentions").addEventListener('click', function(){
+    console.log("passage...")
+    document.querySelector("#mentions").classList.toggle('displayNone');
 });
