@@ -1,28 +1,24 @@
-// function que-sur-pc() {
-//     resolution< ? then =>
-//     alert("Uniquement sur PC");
-// }
-
+var ecranActif = "accueil"
 window.setTimeout(() => {
-    //<section id=loader> desactiver
     document.getElementById('loader').classList.add("displayNone")
-    //<section id="acceuil" class="displayNone"> activer
     document.getElementById('accueil').classList.remove("displayNone")
-
-}, 1000);
-
-document.getElementById('jouer').addEventListener('click', function(){
-        
-    console.log("nouvelle partie");
+    ecranActif = "accueil"
+}, 3000);
+console.log(ecranActif)
+document.getElementById('jouer').addEventListener('click', function () {
+    ecranActif = "jeu"
+    console.log(ecranActif);
     document.getElementById('accueil').classList.add("displayNone")
     document.getElementById('jeu').classList.remove("displayNone")
+
     // activer zoom
     wheelzoom(document.querySelector('img.zoom'));
-})
+});
 
 var mot = ""
 var keyb = 0
-var tableau = ["HTML", "Javascript", "CSS", "Python", "Java", "Bash",
+var listeTrouvés = ""
+var tableau = ["html", "Javascript", "CSS", "Python", "Java", "Bash",
     "PowerShell", "C#", "PHP", "C++", "TypeScript", "C", "Objective-C", "Ruby", "Go",
     "Assembly", "Swift", "Kotlin", "R", "VBA", "Scala", "Rust",
     "Dart", "Elixir", "Clojure", "WebAssembly", "SQL"
@@ -44,7 +40,6 @@ let erreur = 0;
 let mot2 = "";
 let longueurMot = 0;
 let max = tableau.length
-console.log("taille tableau: " + tableau.length);
 
 // && et,   ||  ou, !== non  = <>?
 
@@ -54,7 +49,6 @@ window.addEventListener("keydown", function (e) {
 
     switch (keyb) {
         case 'Backspace':
-            console.log("effacer 1 caractere");
             mot = mot.slice(e, -1)
             longueurMot = longueurMot - 1
             keyb = ""
@@ -68,36 +62,37 @@ window.addEventListener("keydown", function (e) {
         case 'NumLock':
         case 'Control':
         case 'Alt':
+        case 'Dead':
+        case 'AltGraph':
         case 'CapsLock':
-            console.log("Sans effets");
+            //"Sans effets"
             keyb = ""
             break
         case 'Enter':
             if (mot == "") {
-                console.log("Mot vide")
                 keyb = ""
+                document.getElementById('entree').textContent = "";
+                document.getElementById('entree2').textContent = "";
             }
             break
         case 'Escape':
             mot = ""
             keyb = ""
-            console.log("Mot effacé")
             document.getElementById('entree').textContent = "";
             document.getElementById('entree2').textContent = "";
             break
     }
 
     if (keyb == 'Enter' && mot !== "") {
-        console.log('mot entré: ' + mot)
 
         for (let i = 0; i < max; i++) {
-            if (tableauVerif.length > 0) {
-                for (let j = 0; i < tableauVerif.length; i++) {
+            console.log("boucle: " + i)
+            if (tableauVerif.length != 0) {
+                for (let i = 0; i < tableauVerif.length; i++) {
                     if (mot.toLowerCase() == tableauVerif[i].toLowerCase()) {
                         console.log("déja trouvé !!")
                         document.getElementById('entree').textContent = "Déja trouvé!";
                         mot2 = "deja";
-
                         setTimeout(function () {
                             document.getElementById('entree').textContent = "";
                             document.getElementById('entree2').textContent = "";
@@ -110,35 +105,36 @@ window.addEventListener("keydown", function (e) {
             // tolowercase: en min & touppercase en maj
             if (mot.toLowerCase() == tableau[i].toLowerCase() && mot2 !== "deja") {
 
-                console.log(" ds le tableau, index: " + i);
+                console.log("tableau index: " + i + " mot: " + mot);
                 mot2 = "trouvé"
 
                 document.getElementById('entree').textContent = "";
                 document.getElementById('entree2').textContent = "";
                 score += 1
-                console.log("Score " + score);
-                /*pts*/
-                document.querySelector(".pts").textContent=score+"/27";
+                document.querySelector(".pts").textContent = score + " / 27";
 
                 tableauVerif.push(mot)
+                // ajouter ds liste trouvés
+                console.log("ajouter " + mot)
+                listeTrouvés = listeTrouvés + mot + "  "
+
 
                 // utilisation api & appel Fetch
                 let div = document.querySelector(".logo-titre");
                 let div2 = document.querySelector(".Descriptif");
 
-                console.log(" tableau index: " + i + " mot: " + mot);
-                
                 fetch("./assets/js/languages.json")
                     .then((reponse) => reponse.json())
                     .then((data) => {
-                       div.innerHTML = `<h2>${data[i].name}</h2>
+                        div.innerHTML = `<h2>${data[i].name}</h2>
                                     <img src=${data[i].picture} /> `;
                         div2.innerHTML = `<p>${data[i].description}</p>`
                     });
+                document.getElementById("modal").classList.remove('displayNone');
 
-                document.getElementById("modal").classList.toggle('displayNone');
-
-                // ajouter 'entree' pour quitter modale (avec else?)
+                this.modal.addEventListener("keydown", () => {
+                    document.getElementById("modal").classList.add('displayNone');
+                });
                 this.modal.addEventListener("click", () => {
                     document.getElementById("modal").classList.add('displayNone');
                 });
@@ -152,21 +148,24 @@ window.addEventListener("keydown", function (e) {
                 document.getElementById('entree2').textContent = "";
 
                 erreur += 1
-                console.log("Erreur: " + erreur);
-
-                /* croix */
-                if (erreur===1) {
-                    document.querySelector(".x1").style.color="#0AEFF7";      
+                if (erreur === 1) {
+                    document.querySelector(".x1").style.color = "#0AEFF7";
                 }
-                if (erreur===2) {
-                    document.querySelector(".x2").style.color="#0AEFF7";                   
+                if (erreur === 2) {
+                    document.querySelector(".x2").style.color = "#0AEFF7";
                 }
-                if (erreur > 2) {
-                    document.querySelector(".x3").style.color="#0AEFF7";
-                    document.querySelector('.entree').textContent = "GAME OVER";
+                if (erreur === 3) {
+                    document.querySelector(".x3").style.color = "#0AEFF7";
+                }
+                if (erreur > 3) {
+                    document.getElementById('entree').textContent = "OUPS! GAME OVER";
+                    console.log("passage game over")
                     setTimeout(function () {
                         document.getElementById('entree').textContent = "";
-                    }, 1000);
+                        ecranActif = "accueil"
+                        document.getElementById('jeu').classList.add("displayNone");
+                        document.getElementById('accueil').classList.remove("displayNone")
+                    }, 3000);
                 }
             }, 1000);
         }
@@ -179,9 +178,57 @@ window.addEventListener("keydown", function (e) {
         longueurMot = mot.length;
     }
 });
-// mentions
 
-document.querySelector("#affMentions").addEventListener('click', function(){
-    console.log("passage...")
-    document.querySelector("#mentions").classList.toggle('displayNone');
+/* ouverture et fermeture 'mentions legales' */
+document.querySelector("#affMentions").addEventListener('click', function () {
+    if (ecranActif === "accueil") {
+        document.getElementById('accueil').classList.add("displayNone")
+    }
+    if (ecranActif === "jeu") {
+        document.getElementById('jeu').classList.add("displayNone")
+    }
+    document.querySelector("#mentions").classList.remove('displayNone')
+});
+
+document.querySelector("#mentions").addEventListener('click', function () {
+    if (ecranActif === "accueil") {
+        document.getElementById('accueil').classList.remove("displayNone")
+    }
+    if (ecranActif === "jeu") {
+        document.getElementById('jeu').classList.remove("displayNone")
+    }
+    document.querySelector("#mentions").classList.add('displayNone')
+});
+
+/* ouverture et fermeture 'comment jouer' */
+document.querySelector("#affCommentJouer").addEventListener('click', function () {
+    if (ecranActif === "accueil") {
+        document.getElementById('accueil').classList.add("displayNone")
+    }
+    if (ecranActif === "jeu") {
+        document.getElementById('jeu').classList.add("displayNone")
+    }
+    document.querySelector("#commentJouer").classList.remove('displayNone')
+});
+
+document.querySelector("#commentJouer").addEventListener('click', function () {
+    if (ecranActif === "accueil") {
+        document.getElementById('accueil').classList.remove("displayNone")
+    }
+    if (ecranActif === "jeu") {
+        document.getElementById('jeu').classList.remove("displayNone")
+    }
+    document.querySelector("#commentJouer").classList.add('displayNone')
+});
+
+// affichage languages trouvés
+document.querySelector("#languagesTrouve").addEventListener('click', function () {
+
+    for (let i = 0; i < tableauVerif.length; i++) {
+        if (tableauVerif[0] === "") {
+            console.log["liste vide !"]
+        }
+    }
+    document.getElementById('entree').textContent = listeTrouvés;
+    document.getElementById('entree2').textContent = "Languages trouvés (esc pour annuler)";
 });

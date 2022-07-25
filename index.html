@@ -19,7 +19,7 @@
 
     <div class="basdepage">
         <a href="#mentions" id="affMentions"> Mentions legales </a>
-        <a href="#confidentialite"> Politique de confidentialité </a>
+        <a href="#commentJouer" id="affCommentJouer"> Comment jouer </a>
     </div>
 
     <section id="loader">
@@ -48,14 +48,11 @@
 
         <img class='zoom' src='assets\img\chambre.jpg' alt='chambre' />
 
-        <div class="dialogue">
-            <p id="entree2"></p>
-            <p id="entree"></p>
-        </div>
+
 
         <div class="score">
-            <p class="titrescore">score</p>
-            <p class="pts"></p>
+            <span class="titrescore">score</span>
+            <span class="pts">0/27</span>
             <span class="croix x1">X</span>
             <span class="croix x2">X</span>
             <span class="croix x3">X</span>
@@ -63,14 +60,19 @@
         <div class="logo-jeu"></div>
 
         <div class="barre-zoom">
-            <p class="titre-zoom">zoom</p>
+            <span class="titre-zoom">zoom</span>
             <a class="plus" href="plus">+</a>
             <a class="moins" href="moins">-</a>
         </div>
 
         <div class="trouve">
             <div class="loupe"></div>
-            <p>Languages trouvés</p>
+            <a id="languagesTrouve">Languages trouvés</a>
+        </div>
+
+        <div class="dialogue">
+            <p id="entree2"></p>
+            <p id="entree"></p>
         </div>
 
         <div id="modal" class="displayNone">
@@ -84,18 +86,73 @@
 
     </section>
     <div id="mentions" class="displayNone">
-                  
-        <div id="modalMentions">
-            <h2>Mentions légales</h2>
-            <p>Editeur du Site :</p><p>Le site web <a href='https://popcode.alainmerucci.fr'>popcode.alainmerucci.fr </a>est &eacute;dit&eacute; par les apprenants de l&#39;<a href='https://www.accesscodeschool.fr/' target='_blank'>Access Code School</a> de Lons le Saunier et n&#39;est en aucun cas destin&eacute; &agrave; une utilisation commerciale. Celui-ci &agrave; &eacute;t&eacute; d&eacute;veloppp&eacute; dans le cadre d&#39;un projet d&#39;&eacute;tude.</p><p>H&eacute;bergement</p><p>OVH<br />SAS au capital de 200 000 euros<br />RCS Paris 393 078 647<br />Si&egrave;ge Sociale : 3 cit&eacute; Paradis 75010 Paris</p><p>Cookies</p><p>Notre site internet utilise des cookies. Il s&rsquo;agit de petits fichiers texte enregistr&eacute;s sur votre disque dur. La plupart des cookies sont destin&eacute;s &agrave; permettre ou faciliter votre navigation et sont n&eacute;cessaires au fonctionnement du site. L&rsquo;utilisation de cookies, propres ou tiers, n&rsquo;&eacute;tant pas obligatoirement n&eacute;cessaires au fonctionnement du site n&eacute;cessite un consentement expr&egrave;s de votre part. Vous pouvez manifester votre consentement ou vous opposer &agrave; l&rsquo;utilisation des cookies en param&eacute;trant votre dispositif de connexion de mani&egrave;re appropri&eacute;e. Reportez-vous pour cela notamment au guide d&rsquo;utilisation de votre navigateur.</p><p>Comment accepter, param&eacute;trer ou refuser un cookie ?</p><p>Vous pouvez configurer votre navigateur de fa&ccedil;on &agrave; ce que les cookies soient enregistr&eacute;s ou rejet&eacute;s.</p><p>Pour Microsoft Internet Explorer :</p><ul><li>Choisissez le menu &nbsp;<strong>Outils</strong> &nbsp;puis &nbsp;<strong>Options Internet&nbsp;</strong></li><li>Cliquez sur l&rsquo;onglet &laquo; Confidentialit&eacute; &raquo;</li><li>S&eacute;lectionnez le niveau souhait&eacute; &agrave; l&rsquo;aide du curseur</li></ul><p>Pour Mozilla Firefox :</p><ul><li>Choisissez le menu <strong>Outils&nbsp;</strong>puis&nbsp;<strong>Options</strong></li><li>Cliquez sur l&rsquo;option <strong>Vie priv&eacute;e</strong></li></ul><p>Pour Chrome :</p><ul><li>Choisissez le menu <strong>Edition</strong> puis&nbsp;<strong>Pr&eacute;f&eacute;rences</strong>&nbsp;</li><li>Cliquez sur l&rsquo;option <strong>Donn&eacute;es personnelles</strong></li><li>Rubrique <strong>Cookies</strong>&nbsp;</li></ul><p>Pour Safari :</p><ul><li>Choisissez le menu <strong>Edition</strong> puis&nbsp;<strong>Pr&eacute;f&eacute;rences</strong>&nbsp;</li><li>Cliquez sur l&rsquo;option <strong>Donn&eacute;es personnelles</strong></li><li>Rubrique <strong>Cookies</strong>&nbsp;</li></ul><p>Protection des donn&eacute;es personnelles</p><p>Aucune information personnelle n&rsquo;est collect&eacute;e &agrave; votre insu.<br />Aucune information personnelle n&rsquo;est c&eacute;d&eacute;e &agrave; des tiers.</p>"        
-        </div>
-     
-</div>
 
+        <!-- <div id="modalMentions"> -->
+        <p>Editeur du Site :</p>
+        <p>Le site web<a href='https://popcode.alainmerucci.fr'>popcode.alainmerucci.fr </a>est édité par
+            les apprenants de l&#39;<a href='https://www.accesscodeschool.fr/' target='_blank'>Access Code School</a> de
+            Lons le Saunier et n&#39;est en aucun cas destiné à une utilisation commerciale. Celui-ci
+            à été développpé dans le cadre d&#39;un projet d&#39;étude.</p>
+        <p>Hébergement:</p>
+        <p>OVH - SAS au capital de 200 000 euros - RCS Paris 393 078 647 - Siège Social: 3 cité
+            Paradis 75010 Paris</p>
+        <p>Cookies</p>
+        <p>Notre site internet utilise des cookies. Il s'agit de petits fichiers texte enregistrés sur
+            votre disque dur. La plupart des cookies sont destinés à permettre ou faciliter votre
+            navigation et sont nécessaires au fonctionnement du site. L'utilisation de cookies, propres ou
+            tiers, n'étant pas obligatoirement nécessaires au fonctionnement du site
+            nécessite un consentement exprès de votre part. Vous pouvez manifester votre consentement ou
+            vous opposer à l'utilisation des cookies en paramétrant votre dispositif de connexion de
+            manière appropriée. Reportez-vous pour cela notamment au guide d'utilisation de votre
+            navigateur.</p>
+        <p>Comment accepter, paramétrer ou refuser un cookie? Vous pouvez configurer votre navigateur de fa&ccedil;on à
+            ce que les cookies soient enregistrés
+            ou rejetés.</p>
+        <br>
+        <p>Pour Microsoft Internet Explorer:</p>
+
+        <p>&emsp; - Choisissez le menu &nbsp;<strong>Outils</strong> &nbsp;puis &nbsp;<strong>Options
+                Internet&nbsp;</strong></p>
+        <p>&emsp; - Cliquez sur l'onglet &laquo; Confidentialité &raquo;</p>
+        <p>&emsp;- Sélectionnez le niveau souhaité à l'aide du curseur</p>
+        <p>Pour Mozilla Firefox:</p>
+
+        <p>&emsp;- Choisissez le menu <strong>Outils&nbsp;</strong>puis&nbsp;<strong>Options</strong></p>
+        <p>&emsp;- Cliquez sur l'option <strong>Vie privée</strong></p>
+        <p>Pour Chrome:</p>
+
+        <p>&emsp;- Choisissez le menu <strong>Edition</strong> puis&nbsp;<strong>Préférences</strong>&nbsp;
+        </p>
+        <p>&emsp;- Cliquez sur l'option <strong>Données personnelles</strong>, rubrique <strong>Cookies</strong>&nbsp;
+        </p>
+        <p>Pour Safari:</p>
+
+        <p>&emsp;- Choisissez le menu <strong>Edition</strong> puis&nbsp;<strong>Préférences</strong>&nbsp;
+        </p>
+        <p>&emsp;- Cliquez sur l'option <strong>Données personnelles</strong>, rubrique <strong>Cookies</strong>&nbsp;
+        </p>
+        <p>&emsp;- Protection des données personnelles:</p>
+        <br><br>
+        <p>Aucune information personnelle n'est collectée à votre insu et aucune information
+            personnelle n'est cédée à des tiers.</p>
+    </div>
+
+    <div id="commentJouer" class="displayNone">
+        <div id=" mentions">
+            <h2>Comment jouer:</h2><br>
+            <p>Vous devez trouver les logos de differents languages de programmation</p><br>
+            <p>Vous pouver 'zoomer' avec la molette de la souris et vous deplacer en maintenant enfoncé le bouton de la
+                souris.</p><br>
+            <p>Vous devez ensuite taper le nom correspondant au logo et le valider avec la touche 'entrée'.</p><br>
+            <p>Si la reponse est la bonne, vous marquez 1 point.</p><br>
+            <p>ATTENTION! Vous n'avez le droit qu'a 3 erreurs.</p>
+            <br><br>
+            <h2>Bon Jeu!</h2>
+        </div>
+    </div>
 
 </body>
 <!-- RESTE A FAIRE -->
-<!-- GAME OVER & restart  + languages trouves-->
-
+<!-- GAME OVER -->
 
 </html>

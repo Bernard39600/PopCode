@@ -15,8 +15,6 @@ body {
     display: none !important;
 }
 
-
-/* loader */
 #loader {
     padding: 0;
     margin: 0;
@@ -24,7 +22,6 @@ body {
     height: 100vh;
     background-image: url("../img/tron.gif");
     background-size: cover;
-
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -186,7 +183,6 @@ body {
     }
 }
 
-
 #accueil {
 
     width: 100%;
@@ -194,13 +190,11 @@ body {
     background-image: url("../img/Wall-Popcorn.png");
     background-size: cover;
     font-family: "Gotham";
-
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     text-align: center;
-
     color: white;
 
 }
@@ -275,15 +269,15 @@ a:hover {
     color: #0AEFF7;
     transform: rotate(-90deg);
     position: fixed;
-    top: 20px;
+    top: 35px;
     left: 0;
 }
 
 .pts {
     color: white;
     position: fixed;
-    top: 10px;
-    left: 40px;
+    top: 25px;
+    left: 50px;
 }
 
 .croix {
@@ -308,7 +302,6 @@ a:hover {
     color: #0AEFF7;
 }
 
-
 .logo-jeu {
     width: 150px;
     height: 150px;
@@ -326,7 +319,6 @@ a:hover {
     bottom: 200px;
     left: 15px;
 }
-
 
 .barre-zoom {
     position: fixed;
@@ -383,22 +375,22 @@ a:hover {
     font-size: 32px;
 }
 
-#modalMentions {
-    /* position: fixed; */
+#modal {
+    position: fixed;
     top: 20px;
-    /* visibility: initial; */
+    visibility: initial;
     opacity: 1;
-
-    /* top: 0;
+    top: 0;
     right: 0;
     bottom: 0;
-    left: 0; */
+    left: 0;
     display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
     background: rgba(100, 100, 100, .7);
+
 }
+
 
 .modal:target {
     visibility: visible;
@@ -470,32 +462,34 @@ a:hover {
 }
 
 #mentions {
-    position: fixed;
-    top: 20px;
-    visibility: initial;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/Wall-Popcorn.png");
+    background-size: cover;
+    color: white;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    text-align: left;
     justify-content: center;
-    background: rgba(100, 100, 100, .7);
-    /* contenu */
-    display: flex;
     align-items: center;
-    margin: 0 auto;
-    margin-top: 20px;
-    border-radius: 20px;
-    position: relative;
-    width: 800px;
-    max-width: 90%;
-    background: white;
-    overflow: hidden;
-    padding: 20px 30px 0 30px;
-
 }
 
+#mentions p{
+    width: 90%;
+}
+
+#commentJouer {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/Wall-Popcorn.png");
+    background-size: cover;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: center;
+    align-items: center;
+}
 
 @media screen and (max-width:1200px) {
     #jeu {
